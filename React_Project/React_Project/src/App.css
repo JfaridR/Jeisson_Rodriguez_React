@@ -1,42 +1,44 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+.container {
+  border:dotted 2px gray;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  align-items: center;
+  justify-content:center;
+  margin: auto;
+  width: 1000px;
+  height: 800px;
+  margin-top: 2%;
+}
+
+.title {
+  color: blue;
+  font-size: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
   text-align: center;
+  justify-content: center;
+  padding: 10px;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  border: solid 2px;
+  border-radius: 10px;
+  background-image: url('https://cdn.mos.cms.futurecdn.net/ifZxgpjqTS8Dp7AuozUcSG-1200-80.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 700px;
+  height: 700px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.text {
+  width: 700px;
+  height: 400px;
+  color: rgb(6, 1, 143);
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: justify;
+  padding: 1em;
+  justify-content: center;
 }
