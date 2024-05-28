@@ -1,9 +1,12 @@
 import './App.css'
 import React from 'react';
-import Title from './Components/Title';
-import Image from './Components/Image';
-import Details from './Components/Details';
-import Rick from '../src/assets/Rick.jpeg'
+//import Title from './Components/Title';
+//import Image from './Components/Image';
+//import Details from './Components/Details';
+import Rick from '../src/assets/Rick.jpeg';
+import Doraemon from '../src/assets/Doraemon.jpeg';
+import Goku from '../src/assets/Goku.jpeg';
+import CharacterCard from './Components/CharacterCard';
 
 /*
 //Tarea #2
@@ -27,6 +30,10 @@ function App() {
 }
 */
 
+/*
+
+//Tarea #3.1
+
 function App() {
   return (
     <div className='cardContainer'>
@@ -36,6 +43,33 @@ function App() {
     </div>
   );
 }
+*/
 
+function App(){
+  return (
+    <>
+      <div className='mainContainer'>
+        <CharacterCard
+          image = {Rick}
+          title = 'Rick Martin'
+          genre = 'Human'
+          status = 'Alive'
+        />
+        <CharacterCard
+          image = {Goku}
+          title = 'Gokú'
+          genre = 'Human'
+          status = 'Alive'
+        />
+        <CharacterCard
+          image = {Doraemon}
+          title = 'Doraemon'
+          genre = 'Animal'
+          status = 'Alive'
+        />
+      </div>
+    </>
+  )
+}
 
 export default App;
