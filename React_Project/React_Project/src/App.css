@@ -1,4 +1,4 @@
-
+/*
 .container {
   border:dotted 2px gray;
   display: flex;
@@ -41,4 +41,46 @@
   text-align: justify;
   padding: 1em;
   justify-content: center;
+}
+*/
+
+.cardContainer {
+  border: solid 2px black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 500px;
+  margin: auto;
+  text-align: center;
+  background-color: greenyellow;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  margin-top: 200px;
+}
+
+.rickImg {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: solid 2px black;
+}
+
+.nameTitle {
+  border: solid 2px black;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 140px;
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: -20px;
+  background-color: greenyellow;
+}
+
+.details {
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 10px;
+  
 }

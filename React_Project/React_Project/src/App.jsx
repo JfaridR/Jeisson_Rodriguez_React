@@ -1,6 +1,12 @@
 import './App.css'
 import React from 'react';
+import Title from './Components/Title';
+import Image from './Components/Image';
+import Details from './Components/Details';
+import Rick from '../src/assets/Rick.jpeg'
 
+/*
+//Tarea #2
 function App() {
   return (
     <div className='container'>
@@ -19,5 +25,17 @@ function App() {
     </div>
   );
 }
+*/
+
+function App() {
+  return (
+    <div className='cardContainer'>
+      <Image url={Rick}/>
+      <Title title='Rick Martin'/>
+      <Details genre= "Human" status= "Alive"/>
+    </div>
+  );
+}
+
 
 export default App;
