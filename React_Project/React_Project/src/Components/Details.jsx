@@ -7,10 +7,10 @@ function Details(props) {
   return (
     <div>
         <p className='details'>
-          {props.genre}
+          <b>Genero: </b> {props.genre}
         </p>
         <p className='details'>
-          {props.status}
+          <b>Estado: </b>{props.status}
         </p>
     </div>
   );

@@ -1,12 +1,13 @@
 import './App.css'
-import React from 'react';
+import React from 'react'
 //import Title from './Components/Title';
 //import Image from './Components/Image';
 //import Details from './Components/Details';
-import Rick from '../src/assets/Rick.jpeg';
-import Doraemon from '../src/assets/Doraemon.jpeg';
-import Goku from '../src/assets/Goku.jpeg';
-import CharacterCard from './Components/CharacterCard';
+//import Rick from '../src/assets/Rick.jpeg';
+//import Doraemon from '../src/assets/Doraemon.jpeg';
+//import Goku from '../src/assets/Goku.jpeg';
+import CharacterCard from './Components/CharacterCard'
+import { useState, useEffect } from 'react'
 
 /*
 //Tarea #2
@@ -45,6 +46,9 @@ function App() {
 }
 */
 
+//Tarea #3.2
+
+/*
 function App(){
   return (
     <>
@@ -70,6 +74,47 @@ function App(){
       </div>
     </>
   )
+}
+*/
+
+
+const rickAndMortyCharacterId = 10;
+
+function App (){
+
+
+  const [name, setName] = useState("");
+  const [image, setImage] = useState("");
+  const [genre, setGenre] = useState("");
+  const [status, setStatus] = useState("");
+
+  useEffect( () => {
+    // Este useEffect se ejecutará una única vez cuando el componente se monte
+    fetch("https://rickandmortyapi.com/api/character/"+rickAndMortyCharacterId)
+      .then((response) => response.json())
+      .then((result) => {
+        setName(result.name)
+        setImage(result.image)
+        setGenre(result.gender)
+        setStatus(result.status)
+      })
+  }, [])  
+
+  return (
+    <div className='mainCont'>
+      <h1 className='mainTitle'>Personajes de Rick and Morty</h1>
+      <CharacterCard 
+        name={name}
+        image={image}
+        genre={genre}
+        status={status}
+      />
+    </div>
+  )
+
+
+
+
 }
 
 export default App;

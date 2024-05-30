@@ -1,4 +1,5 @@
 
+/*
 const CharacterCard = (props) => {
     const {title, image, genre, status} = props
     return (
@@ -12,5 +13,27 @@ const CharacterCard = (props) => {
         </>
     )
 }
+*/
+
+import React from 'react';
+import Title from './Title';
+import Image from './Image';
+import Details from './Details';
+
+function CharacterCard(props) {
+    // Recuerda que este es solo un componente funcional, 
+    // tu debes incluir estilos para hacerlo más atractivo
+    return (
+      <div className='cardContainer2'>
+        <Image url={props.image}/>
+        <Title title={props.name}/>
+        <Details 
+          genre={props.genre} 
+          status={props.status} 
+        />
+      </div>
+    );
+  }
+
 
 export default CharacterCard
