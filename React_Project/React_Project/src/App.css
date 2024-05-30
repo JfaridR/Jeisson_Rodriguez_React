@@ -70,7 +70,7 @@
 .nameTitle {
   border: solid 2px black;
   border-radius: 20px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   width: 160px;
   text-align: center;
@@ -104,23 +104,33 @@
 .mainContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin-top: 150px;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5%;
+  margin: auto;
+  margin-bottom: 2%;
 }
 
 .mainCont {
+  border: dashed 0.5px gray;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin: auto;
   text-align: center;
-  align-items: center;
+  width: 1500px;
+  height: 680px;
+  background-color: beige;
+  margin-top: 100px;
 }
 
 .mainTitle {
+ 
   font-size: 40px;
   color:rgba(255, 0, 0, 0.518);
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bold;
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.2em;
 }

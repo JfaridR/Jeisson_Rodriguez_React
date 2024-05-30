@@ -6,8 +6,9 @@ import React from 'react'
 //import Rick from '../src/assets/Rick.jpeg';
 //import Doraemon from '../src/assets/Doraemon.jpeg';
 //import Goku from '../src/assets/Goku.jpeg';
-import CharacterCard from './Components/CharacterCard'
-import { useState, useEffect } from 'react'
+//import CharacterCard from './Components/CharacterCard'
+//import { useState, useEffect } from 'react'
+import RickAndMortyCharacterCard from './Components/RickAndMortyCharacterCard';
 
 /*
 //Tarea #2
@@ -77,7 +78,9 @@ function App(){
 }
 */
 
+//Tarea 4.1 - Consulta tarjeta API y Hooks solo 1 a la vez
 
+/*
 const rickAndMortyCharacterId = 10;
 
 function App (){
@@ -115,6 +118,21 @@ function App (){
 
 
 
+}
+*/
+
+function App () {
+  return (
+    <div className='mainCont'>
+      <h1 className='mainTitle'>Personajes de Rick and Morty</h1>
+      <div className='mainContainer'>
+      <RickAndMortyCharacterCard id={1}/>
+      <RickAndMortyCharacterCard id={12}/>
+      <RickAndMortyCharacterCard id={2}/>
+      <RickAndMortyCharacterCard id={9}/>
+      </div>
+    </div>
+  )
 }
 
 export default App;

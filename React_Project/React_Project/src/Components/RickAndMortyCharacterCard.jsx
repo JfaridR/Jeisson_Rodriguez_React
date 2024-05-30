@@ -1,6 +1,6 @@
 
 import React from 'react'
-import CharacterCard from './components/CharacterCard'
+import CharacterCard from './CharacterCard';
 import { useState, useEffect } from 'react'
 
 function RickAndMortyCharacterCard(props) {
@@ -25,7 +25,7 @@ function RickAndMortyCharacterCard(props) {
     }, [])     
   
     return (
-      <div>
+      <div className='mainContainer'>
         <CharacterCard 
           name={name}
           image={image}
