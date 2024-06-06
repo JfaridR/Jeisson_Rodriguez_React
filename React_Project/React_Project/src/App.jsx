@@ -6,9 +6,9 @@ import React from 'react'
 //import Rick from '../src/assets/Rick.jpeg';
 //import Doraemon from '../src/assets/Doraemon.jpeg';
 //import Goku from '../src/assets/Goku.jpeg';
-//import CharacterCard from './Components/CharacterCard'
-//import { useState, useEffect } from 'react'
-import RickAndMortyCharacterCard from './Components/RickAndMortyCharacterCard';
+import CharacterCard from './Components/CharacterCard'
+import { useState, useEffect } from 'react'
+//import RickAndMortyCharacterCard from './Components/RickAndMortyCharacterCard';
 
 /*
 //Tarea #2
@@ -121,6 +121,10 @@ function App (){
 }
 */
 
+//Tarea 4.2 - Uso de tarjeta N veces
+
+/*
+
 function App () {
   return (
     <div className='mainCont'>
@@ -132,6 +136,77 @@ function App () {
       <RickAndMortyCharacterCard id={9}/>
       </div>
     </div>
+  )
+}
+
+*/
+
+function App (){
+  const [charactersList, setCharactersList] = useState([]);
+  const [page, setPage] = useState(1)
+  
+  useEffect(() => {
+    fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
+    .then((response) => response.json())
+    .then((data) => {
+      setCharactersList(data.results)})
+  }, [page])
+
+  useEffect(() => {
+    const url = new URL(window.location)
+    const parameters = new URLSearchParams(url.search)
+    const getPage = parameters.get('page')
+    setPage(getPage)
+    console.log(getPage)
+  }, [])
+
+  const addQueryParameters = () => {
+    const url = new URL(window.location)
+    url.searchParams.set('page', page + 1)
+    window.history.replaceState({}, '', url)
+    setPage(page + 1)
+    }
+
+    const addQueryParameters2 = () => {
+      const url = new URL(window.location)
+      url.searchParams.set('page', page - 1)
+      window.history.replaceState({}, '', url)
+      setPage(page - 1)
+  }
+
+  const addQueryParameters3 = (pageIn) => {
+    const url = new URL(window.location)
+    url.searchParams.set('page', pageIn)
+    window.history.replaceState({}, '', url)
+    setPage(pageIn)
+}
+
+  return (
+    <>
+    <div className='mainCont'>
+      <div className='mainTitle'></div>
+      <div className='mainContainer'>
+      {charactersList.length !==0 && charactersList.map((character) => (
+        <CharacterCard 
+        key={character.id} 
+        name={character.name}
+        image={character.image} 
+        genre={character.gender} 
+        status={character.status} 
+         />
+      ))}
+      </div>
+      <div className='divbutton'>
+      <button className='button' onClick={addQueryParameters2}>{"<<"}</button>
+      <button className='button2' onClick={() => addQueryParameters3(1)}>1</button>
+      <button className='button2' onClick={() => addQueryParameters3(2)}>2</button>
+      <button className='button2' onClick={() => addQueryParameters3(3)}>3</button>
+      <button className='button2' onClick={() => addQueryParameters3(4)}>4</button>
+      <button className='button2' onClick={() => addQueryParameters3(5)}>5</button>
+      <button className='button' onClick={addQueryParameters}>{">>"}</button>
+      </div>
+    </div>
+    </>
   )
 }
 
