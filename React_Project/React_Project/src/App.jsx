@@ -1,13 +1,19 @@
 import './App.css'
 import React from 'react'
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import HomePage2 from './Pages/HomePage2';
+import CharacterPage from './Pages/CharacterPage';
+import EpisodesPage from './Pages/EpisodesPage';
+import NotFoundPage from './Pages/NotFoundPage';
+
 //import Title from './Components/Title';
 //import Image from './Components/Image';
 //import Details from './Components/Details';
 //import Rick from '../src/assets/Rick.jpeg';
 //import Doraemon from '../src/assets/Doraemon.jpeg';
 //import Goku from '../src/assets/Goku.jpeg';
-import CharacterCard from './Components/CharacterCard'
-import { useState, useEffect } from 'react'
+//import CharacterCard from './Components/CharacterCard'
+//import { useState, useEffect } from 'react'
 //import RickAndMortyCharacterCard from './Components/RickAndMortyCharacterCard';
 
 /*
@@ -141,6 +147,9 @@ function App () {
 
 */
 
+//Tarea 6 completa
+
+/*
 function App (){
   const [charactersList, setCharactersList] = useState([]);
   const [page, setPage] = useState(1)
@@ -280,6 +289,32 @@ function App (){
       </div>
     </div>
     </>
+  )
+}
+
+*/
+
+function App(){
+  return (
+    <Router>
+      <div className='nav'>
+          <nav>
+            <ul>
+                  <Link to="/">Home</Link>
+                    {' | '}
+                  <Link to="/characters">Characters</Link>
+                    {' | '}
+                  <Link to="/episodes">Episodes</Link>
+            </ul>
+          </nav>
+      </div>
+          <Routes>
+            <Route path="/" element = {<HomePage2 />} />
+            <Route path="/characters" element = {<CharacterPage />} />
+            <Route path="/episodes" element = {<EpisodesPage />} />
+            <Route element = {<NotFoundPage />} />
+          </Routes>
+    </Router>
   )
 }
 
